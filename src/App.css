@@ -1,0 +1,21 @@
+*{
+  font-family: 'Merriweather', serif;
+}
+
+body{
+background-color: #282c34;  
+}
+.App {
+  text-align: center;
+}
+
+.bg-flowers{
+
+  background-color: rgba(135, 206, 250 ) ;
+  background-repeat: no-repeat;
+  margin: auto;
+  padding: auto;
+  width: 500px;
+  height: 610px;
+  border-radius: 10px;
+}
