@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 
 const Weather = () => {
 
-     "https://api.openweathermap.org/data/2.5/weather?lat=80&lon=80&appid=bb16750571e6c29de28f9e3d1a04ce0f"
-
     const [ city, setcity ] = useState({})
 
     
@@ -22,9 +20,23 @@ const Weather = () => {
 
         navigator.geolocation.getCurrentPosition(success);
     }, [])
-    console.log(city);
 
+    console.log(city);
     
+    const getCelcius = city.main?.temp
+    console.log(getCelcius);
+
+     const celcius = Math.floor(getCelcius - 273.15)
+     console.log(celcius);
+
+     const fahrenhei = Math.floor((getCelcius * 9/5)+32)
+
+    //  const [GC, setGC ] = useState ("")
+
+    //  const gradecelcius = () =>{
+    //     setGC(Math.floor(celcius * 9/5) + 32)
+    //  }
+
     return (
         <div className='container p-5'>
             <div className="card bg-card">
@@ -44,10 +56,10 @@ const Weather = () => {
                         </div>
                     </div>
                     <div className="col-6 text-center">
-                    <h3> {city.main?.temp}°</h3>
+                        <h3>{celcius}°</h3>
                     </div>
                     <div className='col-12 text-center p-5'>
-                        <button  className='btn-weather'>°F / °C</button>
+                        <button   className='btn-weather'>°F / °C</button>
                     </div>
                 </div>
             </div>
