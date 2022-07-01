@@ -65,6 +65,7 @@ const Weather = () => {
                     </div>
                     <div className='col-12 text-center p-5'>
                         <button onClick={converterC}  className='btn-weather'>°C / °F</button>
+                        
                     </div>
                 </div>
             </div>

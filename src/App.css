@@ -11,6 +11,11 @@ background-color: #282c34;
   text-align: center;
 }
 
+.image-nav{
+  border-radius: 50px;
+  width: 150px;
+}
+
 .bg-card{
 
   background-color: rgba(135, 206, 250 ) ;
