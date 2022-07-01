@@ -5,8 +5,7 @@
 
 body{
 background-color: #282c34;  
-background-image: url("./Images/bg-gif.gif");
-  background-size: cover;
+
 }
 .App {
   text-align: center;
@@ -61,16 +60,10 @@ h3{
 
 /* media Query */
 @media (min-width: 400px) and (max-width: 767.98px) {
-  body{
-    /* background-color: #282c34;   */
-    background-image: url("./Images/bg-gif.gif");
-      background-size: cover;
-    }
+  
   .bg-card{
 
       background-color: rgba(135, 206, 250 ) ;
-      /* background-image: url("./Images/bg-gif.gif"); */
-      /* background-size: cover; */
       margin: auto;
       padding: auto;
       width: 300px;
@@ -81,7 +74,6 @@ h3{
 
     .icon{
       justify-content: center;
-      /* color: blueviolet; */
       width: 200px;
       position: absolute;
       bottom: 35%;

@@ -6,7 +6,7 @@ const Weather = () => {
 
     const [ city, setcity ] = useState({})
     const [temp, settemp ] = useState(0)
-    const [ isF, setisF ] = useState(true)
+    const [ isC, setisC ] = useState(true)
 
     
     
@@ -18,7 +18,7 @@ const Weather = () => {
                        
             axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=bb16750571e6c29de28f9e3d1a04ce0f`)
             .then(res => {setcity(res.data);
-                settemp(res.data.main.temp)
+                settemp(Math.floor(res.data.main.temp - 273.15))
             });
         }
 
@@ -29,37 +29,18 @@ const Weather = () => {
     console.log(temp);
 
     const converterC = () =>{
-        if(isF){
-            settemp((Math.floor(temp - 273.15)))
-            setisF(false)
+        if(isC){
+            settemp(Math.floor((temp * 9 / 5 ) + 32))
+            setisC(false)
         } else{
-            settemp(Math.floor((temp - 273.15 ) * 9/5 + 32))
-            setisF(true)   
+            settemp(Math.floor((temp - 32) * 5/9))
+            setisC(true)
+           
         }
         
     }
     
-    // const getCelcius = city.main?.temp
-    // console.log(getCelcius);
-
-    //  const celcius = Math.floor(getCelcius - 273.15)
-    //  console.log(celcius);
-
-    //  const fahrenhei = Math.floor((getCelcius * 9/5)+32)
-
-    //  const [GC, setGC ] = useState (city.main?.temp)
-
-    //  const gradecelcius = () =>{
-    //     if(GC === city.main?.temp){
-    //         const getCelcius = city.main?.temp
-    //     console.log(getCelcius);
-    
-    //      const celcius = Math.floor(getCelcius - 273.15)
-    //      console.log(celcius);
-    //         setGC(celcius)
-
-    //     }
-    //  }
+   
 
     return (
         <div className='container p-5'>
@@ -80,10 +61,10 @@ const Weather = () => {
                         </div>
                     </div>
                     <div className="col-md-6 col-sm-12 text-center">
-                        <h3><b> {temp}</b> °{isF ? "F" : "C"}</h3>
+                        <h3><b> {temp}</b> °{isC ? "C" : "F"}</h3>
                     </div>
                     <div className='col-12 text-center p-5'>
-                        <button onClick={converterC}  className='btn-weather'>°F / °C</button>
+                        <button onClick={converterC}  className='btn-weather'>°C / °F</button>
                     </div>
                 </div>
             </div>
