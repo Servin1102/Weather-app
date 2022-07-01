@@ -1,9 +1,12 @@
 *{
-  font-family: 'Merriweather', serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
 }
 
 body{
 background-color: #282c34;  
+background-image: url("./Images/bg-gif.gif");
+  background-size: cover;
 }
 .App {
   text-align: center;
@@ -15,9 +18,13 @@ background-color: #282c34;
   margin: auto;
   padding: auto;
   width: 500px;
-  height: 500px;
+  height: auto;
   border-radius: 10px;
+  color: rgb(10, 10, 10);
+  
 }
+
+
 
 h2{
   font-weight: bold;
@@ -33,6 +40,7 @@ h2{
 
 h3{
   justify-content: center;
+  font-weight: bold;
 }
 
 .btn-weather{
@@ -42,4 +50,42 @@ h3{
   border-radius: 10px;
   width: 90px;
   border: none;
+}
+
+
+
+
+
+
+
+
+/* media Query */
+@media (min-width: 400px) and (max-width: 767.98px) {
+  body{
+    /* background-color: #282c34;   */
+    background-image: url("./Images/bg-gif.gif");
+      background-size: cover;
+    }
+  .bg-card{
+
+      background-color: rgba(135, 206, 250 ) ;
+      /* background-image: url("./Images/bg-gif.gif"); */
+      /* background-size: cover; */
+      margin: auto;
+      padding: auto;
+      width: 300px;
+      max-width: 500px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .icon{
+      justify-content: center;
+      /* color: blueviolet; */
+      width: 200px;
+      position: absolute;
+      bottom: 35%;
+      right: 38%;
+    }
+  
 }

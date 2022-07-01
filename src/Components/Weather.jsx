@@ -65,7 +65,7 @@ const Weather = () => {
         <div className='container p-5'>
             <div className="card bg-card">
                 <div className="d-flex justify-content-center p-5">
-                    <h2>{city.name}, {city.sys?.country}</h2>
+                    <h2><b>{city.name}, {city.sys?.country}</b></h2>
                 </div>
                 <div className='row m-0'>
                     <div className='col-6 text-center'>
@@ -79,8 +79,8 @@ const Weather = () => {
                             <p><i className="fas fa-temperature-high"></i><b> Pressure: </b> {city.main?.pressure} mb</p>
                         </div>
                     </div>
-                    <div className="col-6 text-center">
-                        <h3>{temp} °{isF ? "F" : "C"}</h3>
+                    <div className="col-md-6 col-sm-12 text-center">
+                        <h3><b> {temp}</b> °{isF ? "F" : "C"}</h3>
                     </div>
                     <div className='col-12 text-center p-5'>
                         <button onClick={converterC}  className='btn-weather'>°F / °C</button>
