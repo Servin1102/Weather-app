@@ -50,7 +50,7 @@ const Weather = () => {
                 </div>
                 <div className='row m-0'>
                     <div className='col-6 text-center'>
-                        <img src={`http://openweathermap.org/img/wn/${city.weather?.[0].icon}@2x.png`} className="icon" alt="" />
+                        <img src={`https://openweathermap.org/img/wn/${city.weather?.[0].icon}@2x.png`} className="icon" alt="" />
                     </div>
                     <div className='col-6 text-center'>
                         <p>"{city.weather?.[0].description}"</p>
