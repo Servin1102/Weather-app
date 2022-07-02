@@ -18,7 +18,8 @@ const Weather = () => {
                        
             axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=bb16750571e6c29de28f9e3d1a04ce0f`)
             .then(res => {setcity(res.data);
-                settemp(Math.floor(res.data.main.temp - 273.15))
+                settemp(Math.round(res.data.main.temp - 273.15))
+                
             });
         }
 
@@ -30,17 +31,15 @@ const Weather = () => {
 
     const converterC = () =>{
         if(isC){
-            settemp(Math.floor((temp * 9 / 5 ) + 32))
+            settemp(Math.round(((temp * 9/5 ) + 32)))
             setisC(false)
         } else{
-            settemp(Math.floor((temp - 32) * 5/9))
-            setisC(true)
-           
-        }
-        
+            settemp(Math.round(((temp - 32) * 5/9)))
+            setisC(true)  
+        } 
     }
     
-   
+    
 
     return (
         <div className='container p-5'>
